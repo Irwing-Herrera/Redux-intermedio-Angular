@@ -1,0 +1,3 @@
+<ul class="todo-list">
+    <app-todo-item *ngFor="let tarea of tareas | filterTarea:filtro" [tarea]="tarea"></app-todo-item>
+</ul>

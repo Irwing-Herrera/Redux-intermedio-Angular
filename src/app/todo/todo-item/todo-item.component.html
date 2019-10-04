@@ -1,0 +1,10 @@
+<!-- class `editing` or `completed` -->
+<li [ngClass]="{'completed' : tarea.completado, 'editing': editando}">
+    <div class="view">
+        <input class="toggle" type="checkbox" [formControl]="checkField" [checked]="tarea.completado">
+        <label (dblclick)="editar()">{{tarea.texto}}</label>
+        <button class="destroy" (click)="borrarTarea()"></button>
+    </div>
+
+    <input class="edit" [value]="tarea.texto" [formControl]="txtInput" #txtInputFisico (keyup.enter)="terminarEdicion()">
+</li>
